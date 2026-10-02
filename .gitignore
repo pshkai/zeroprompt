@@ -1,0 +1,16 @@
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+.openai/
+.codex/
+
+# Generated or machine-specific files
+node_modules/
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
