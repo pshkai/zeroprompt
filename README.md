@@ -8,6 +8,8 @@ The project presents the K³ model-routing proposal through a working browser de
 
 **Status:** course-project prototype with simulated routing and prepared responses. No live AI API integration.
 
+**[Open the live demo](https://pshkai.github.io/zeroprompt/)**
+
 ![ZeroPrompt workspace, showing the outcome editor and routing diagram](docs/preview.png)
 
 ## The idea
@@ -92,4 +94,4 @@ These are proposed extensions, not implemented features or completed research fi
 
 Created by [pshkai](https://github.com/pshkai) as part of undergraduate study in Artificial Intelligence. The prototype carries the **K³ research edition** identity.
 
-This repository shares the source for the course demo. It does not configure or deploy a hosted website.
+The demo is hosted on GitHub Pages. Changes to `main` deploy the static `dist/` directory through GitHub Actions.
