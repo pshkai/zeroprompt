@@ -17,7 +17,7 @@ An ongoing undergraduate university project for an **Artificial Intelligence** c
 - Auto routing by default, plus manual selection and Advanced quality/cost priorities and text-cost budget.
 - A right-hand **Explain the route** drawer showing model selection, estimated tokens, illustrative cost, modeled time, fit, and alternatives.
 - Account preview, Settings, Model Library, How it works, and Model Comparison.
-- Comparison tabs for Coding, Data Analysis, Research, Design, Cost per Task, Context Window, and Model time, including technical, legal, research, and document subtasks.
+- Comparison tabs for Coding, Agentic Tasks, Data Analysis, Research, Design, Cost per Task, Context Window, and Model time, including technical, legal, research, and document subtasks.
 - Keyboard navigation, responsive mobile drawers, cancellation, copy, text download, and reduced-motion support.
 - Rename and delete individual conversations from their options menu, with optional persistence on the device.
 - Provider logos, custom desktop cursors, and viewport-fitted introductions and plan selection. On phones, plan tabs keep one plan visible at a time without page scrolling.
@@ -85,8 +85,10 @@ Local keyword rules classify the task. Auto filters enabled models by provider p
 
 The academic next step is to verify an accessible model pool, define task data and scoring rubrics, and compare routing against fixed-model and cheapest-eligible baselines. Actual quality, billed cost, completion time, and failures need measurement. This repository claims no benchmark findings or demonstrated savings.
 
-Built with HTML, CSS, and vanilla JavaScript. The visual identity uses warm paper, plum, clay, muted olive, and the italic z° mark. GitHub Actions deploys `dist/` to GitHub Pages on changes to `main`.
+Built with HTML, CSS, and vanilla JavaScript. The visual identity uses deep teal (#092328), brown (#41290d), bronze (#b27c3f), and the italic z° mark. GitHub Actions deploys `dist/` to GitHub Pages on changes to `main`.
 
 Created by [pshkai](https://github.com/pshkai) for the K³ undergraduate Artificial Intelligence project.
 
 Provider marks come from [Lobe Icons](https://github.com/lobehub/lobe-icons). Attribution and the upstream license are included in `dist/assets/logos/`. The confusion-matrix image is the user-provided demo asset.
+
+Agentic Tasks comparison includes Finance & Compliance Apps, Operations & Commerce Apps, Long-Run Operations, Systems Engineering, and Performance Optimisation. Scores remain illustrative demo fixtures. Advanced routing preferences open in a popup, while image responses use a bounded preview.
