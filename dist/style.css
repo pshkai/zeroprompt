@@ -11,3 +11,158 @@ dialog{color:var(--ink);background:var(--paper);border:1px solid var(--line);bor
 @media(max-width:480px){h1{font-size:49px}.intro-copy h1{font-size:61px}.intro-copy>p:not(.eyebrow){font-size:16px}.intro-steps{gap:12px;font-size:10px}.intro-symbol{font-size:95px}.brand{font-size:22px}.plan ul{grid-template-columns:1fr}.plan-price{font-size:23px}.plan h2{font-size:35px}.welcome-heading{padding-top:25px}.welcome-heading h1{font-size:48px}.welcome-heading .eyebrow{font-size:8px;letter-spacing:1.8px}.welcome-asterisk{margin-bottom:20px}.composer{padding:15px 15px 12px}.model-button{max-width:190px;gap:6px;padding-inline:0;font-size:10px}.composer-toolbar>div{gap:9px}.advanced-button{font-size:10px}.demo-prompt{font-size:10px;padding:9px 10px}.demo-section{padding-top:27px}.model-library{grid-template-columns:1fr}.setting-row{gap:16px;align-items:flex-start}.setting-row select{max-width:143px}.setting-row .secondary-button{padding:9px;min-height:40px}.how-list article{gap:20px}.route-drawer{padding:22px}.dialog-heading h2{font-size:30px}dialog{padding:21px}.workspace-header .text-button{font-size:10px}.response-byline small{font-size:8px}.priority-options span{font-size:10px}.message.user{max-width:94%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.ambient,#cursor-halo{display:none}}
 @media(max-width:800px){.sidebar{visibility:hidden}.sidebar.open{visibility:visible}.plan-usd{margin:8px 0 20px;text-align:left}}
+
+/* Viewport-sized introductions and consistent alignment */
+body.intro-open,body.workspace-unanswered,body:has(dialog[open]){overflow:hidden}
+#onboarding{height:100dvh;min-height:0;display:grid;grid-template-rows:82px minmax(0,1fr)64px;overflow:hidden}
+.intro-header{padding:18px 5%;align-self:stretch}
+.intro-stage{min-height:0;height:100%;width:min(1170px,90%);padding:8px 0 12px;margin:0 auto;overflow:hidden}
+.intro-footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:12px 5%;width:100%}
+.intro-footer>span{justify-self:start}.intro-footer>#intro-progress{grid-column:2;justify-self:center}
+.intro-footer>#skip-intro{grid-column:3;justify-self:end}
+.intro-copy{height:100%;max-height:650px;max-width:940px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,2.4dvh,24px)}
+.intro-copy .eyebrow,.intro-copy>p:not(.eyebrow),.intro-copy .intro-symbol,.intro-copy .intro-steps{margin:0}
+.intro-copy h1{font-size:clamp(40px,min(6.2vw,8.5dvh),82px);line-height:1.02}
+.intro-symbol{font-size:clamp(48px,9dvh,86px);line-height:.9;flex:none}
+.intro-symbol sup{font-size:.4em}
+.intro-copy>p:not(.eyebrow){font-size:clamp(13px,1.8dvh,17px);line-height:1.7;max-width:590px}
+.intro-copy .eyebrow{font-size:9px}
+.intro-steps{gap:24px}.intro-steps span{padding-bottom:8px}
+.intro-copy .primary-button{min-height:46px;padding:12px 23px}
+.plan-intro{height:100%;max-height:710px;padding:0;display:flex;flex-direction:column;justify-content:center;gap:13px}
+.plan-heading{margin:0;flex:none}.plan-heading .eyebrow{margin-bottom:9px}.plan-heading h1{font-size:clamp(36px,6.5dvh,60px)}
+.plan-heading p:not(.eyebrow){margin-top:9px;font-size:13px}
+.plans-grid{flex:1;min-height:0;max-height:550px;width:100%}
+.plan{padding:clamp(13px,2.4dvh,25px) clamp(16px,2vw,28px);min-height:0;overflow:hidden}
+.plan .plan-number{margin-bottom:10px;font-size:9px}
+.plan h2{font-size:clamp(28px,4.3dvh,38px)}
+.plan-price{position:static;font-size:24px;margin:10px 0 0;line-height:1.2}
+.plan-usd{margin:4px 0 12px;text-align:left;font-size:10px}
+.plan ul{font-size:clamp(10px,1.45dvh,12px);line-height:1.4;margin-bottom:15px}
+.plan li{padding-top:5px;padding-bottom:5px}
+.plan button{min-height:43px;padding:10px 8px;font-size:11px;flex:none}
+.popular-label{position:absolute;right:17px;top:17px;font-size:9px;line-height:1.5;padding:3px 9px;border-radius:20px;background:#e2e6d6;color:#515d3e;white-space:nowrap}
+.plan-back{margin:0;align-self:flex-start;font-size:11px;flex:none}
+.plan-switcher{display:none}
+.plans-dialog{height:min(720px,calc(100dvh - 40px));max-height:calc(100dvh - 40px);overflow:hidden;padding:26px}
+.plans-dialog[open]{display:flex;flex-direction:column;gap:18px}
+.plans-dialog .dialog-heading{margin:0;flex:none}
+#modal-plans{min-height:0;flex:1;display:flex;flex-direction:column;gap:12px}
+.plans-dialog .plans-grid{max-height:none}
+.plans-dialog .plan ul{font-size:11px}
+.setting-row select{appearance:none;-webkit-appearance:none;width:190px;max-width:45%;flex:none;padding:11px 40px 11px 16px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m2 2 4 4 4-4' fill='none' stroke='%2368465c' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center}
+#model-dialog{padding:26px;overflow:hidden;max-height:min(830px,calc(100dvh - 40px))}
+#model-dialog[open]{display:flex;flex-direction:column}
+#model-dialog .dialog-heading{flex:none;margin-bottom:21px;align-items:center}
+#model-dialog .dialog-heading h2{margin-top:9px}
+#model-dialog .picker-search{flex:none;margin:0 0 15px}
+#model-options{overflow-y:auto;min-height:0;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#c7b9be transparent}
+#model-dialog>.micro{flex:none;margin-top:15px;padding-top:12px}
+.model-option{gap:14px;padding:13px 12px;min-height:63px}
+.model-option>.provider-logo{width:27px;height:27px;flex:none;object-fit:contain}
+.provider-logo{object-fit:contain;display:block;flex:none;width:25px;height:25px}
+.model-option>span:nth-child(2){min-width:0;line-height:1.5}
+.model-heading{display:flex;align-items:center;gap:12px}
+.model-heading .provider-logo{width:25px;height:25px}
+.response-byline .provider-logo{width:21px;height:21px}
+
+/* Empty workspaces fit the screen; conversation pages can grow after a reply. */
+.workspace-unanswered .workspace-inner{height:calc(100dvh - 88px);display:flex;flex-direction:column;min-height:0;padding:0 0 19px}
+.workspace-unanswered .welcome-heading{flex:1;min-height:0;padding:15px 0 24px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.workspace-unanswered .welcome-asterisk{font-size:clamp(30px,5dvh,47px);margin-bottom:18px}
+.workspace-unanswered .welcome-heading .eyebrow{margin-bottom:13px}
+.workspace-unanswered .welcome-heading h1{font-size:clamp(40px,5vw,64px)}
+.workspace-unanswered .welcome-heading>p:last-child{margin-top:13px}
+.workspace-unanswered #composer-form{flex:none}
+.workspace-unanswered .demo-section{padding-top:24px;flex:none}
+.workspace-unanswered .workspace-note{margin-top:20px;flex:none}
+.workspace-unanswered .messages{flex:1;min-height:0;overflow:hidden}
+.workspace-unanswered .has-messages .welcome-heading,.workspace-unanswered .has-messages .demo-section{display:none}
+textarea{resize:none;min-height:55px;height:clamp(55px,8dvh,85px);max-height:130px;overflow-y:auto;scrollbar-width:thin}
+.workspace-unanswered .workspace-inner:has(#advanced-options:not(.hidden)) .welcome-heading{padding-block:12px}
+.workspace-unanswered .workspace-inner:has(#advanced-options:not(.hidden)) .welcome-asterisk,.workspace-unanswered .workspace-inner:has(#advanced-options:not(.hidden)) .welcome-heading .eyebrow{display:none}
+.workspace-unanswered .workspace-inner:has(#advanced-options:not(.hidden)) .welcome-heading h1{font-size:38px}
+.workspace-unanswered .workspace-inner:has(#advanced-options:not(.hidden)) .welcome-heading>p:last-child{display:none}
+.response-body .code-explanation{white-space:normal;margin:17px 0 0;font-size:14px;line-height:1.8}
+.response-body pre{margin:0;line-height:1.75}
+.image-response{white-space:normal}
+.meme-result{display:block;width:100%;height:auto;border-radius:9px;max-width:820px}
+
+/* A small, uncluttered conversation list. */
+.conversation-section{display:flex;flex-direction:column;overflow:hidden}
+.sidebar-label{flex:none}
+#chat-list{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#c7b9be transparent;overscroll-behavior:contain;padding-right:3px}
+#chat-list::-webkit-scrollbar,#model-options::-webkit-scrollbar{width:4px}
+#chat-list::-webkit-scrollbar-track,#model-options::-webkit-scrollbar-track{background:transparent}
+#chat-list::-webkit-scrollbar-thumb,#model-options::-webkit-scrollbar-thumb{background:#c7b9be;border-radius:9px}
+#chat-list::-webkit-scrollbar-button{display:none;width:0;height:0}
+#chat-list{scrollbar-width:none}#chat-list::-webkit-scrollbar{display:none}
+.chat-row{display:flex;align-items:center;min-width:0;border-radius:5px;margin-bottom:2px}
+.chat-row.active,.chat-row:hover,.chat-row:focus-within{background:#e7e1d8}
+.chat-row .chat-item{flex:1;min-width:0;width:auto;padding:10px 8px 10px 11px;background:none}
+.chat-menu-trigger{flex:none;width:27px;height:29px;padding:0;font-size:20px;color:var(--muted);opacity:0;border-radius:4px;line-height:1}
+.chat-row:hover .chat-menu-trigger,.chat-row:focus-within .chat-menu-trigger,.chat-menu-trigger[aria-expanded=true]{opacity:1}
+.chat-menu-trigger:hover{background:#dcd3cb;color:var(--plum)}
+.chat-menu{position:fixed;z-index:24;width:160px;padding:5px;background:var(--white);border:1px solid var(--line);border-radius:7px;box-shadow:0 6px 22px #302c2a15}
+.chat-menu button{display:block;text-align:left;width:100%;font-size:12px;padding:9px 11px;border-radius:4px}
+.chat-menu button:hover,.chat-menu button:focus-visible{background:var(--wash)}
+#rename-dialog h2,#delete-chat-dialog h2{font-size:32px;margin-bottom:22px}
+#rename-dialog label{display:block;font-size:12px;color:var(--muted);margin-bottom:9px}
+#rename-chat-input{display:block;width:100%;padding:13px;border:1px solid #cfc2c4;border-radius:5px;background:var(--white);color:var(--ink)}
+#delete-chat-title{font-size:14px;overflow-wrap:anywhere}
+@media(hover:hover) and (pointer:fine){body,body *{cursor:url('assets/cursor.svg') 4 3,auto}button,button *,a,a *,select,input[type=checkbox],input[type=radio],input[type=range],label:has(input){cursor:url('assets/cursor-link.svg') 12 12,pointer}textarea,input[type=text],input[type=search]{cursor:url('assets/cursor-text.svg') 12 15,text}}
+@media(max-width:800px){
+ #onboarding{grid-template-rows:68px minmax(0,1fr)54px}.intro-header{padding-block:15px}.intro-footer{padding-block:8px}
+ .intro-copy{gap:clamp(11px,2.4dvh,20px)}.intro-copy h1{font-size:clamp(36px,min(8vw,7.2dvh),64px)}
+ .intro-copy>p:not(.eyebrow){font-size:15px;max-width:540px}.intro-symbol{font-size:65px}
+ .intro-stage{width:90%;padding:5px 0 9px}.plan-intro{gap:11px}.plan-heading h1{font-size:clamp(36px,5.3dvh,46px)}
+ .plan-heading p:not(.eyebrow){font-size:12px;margin-top:7px}.plan-heading .eyebrow{font-size:8px;margin-bottom:6px}
+ .plan-switcher{display:flex;gap:4px;background:var(--wash);padding:3px;border-radius:6px;flex:none}
+ .plan-tab{flex:1;font-size:12px;padding:7px 10px;border-radius:4px;color:var(--muted)}
+ .plan-tab.active{background:var(--plum);color:var(--white)}
+ .plans-grid{grid-template-columns:1fr;max-height:530px;min-height:0}
+ .plan{padding:20px 23px;border:0!important}.plan:not(.mobile-selected){display:none}
+ .plan ul{grid-template-columns:1fr;font-size:12px;line-height:1.35;margin-bottom:10px}
+ .plan li{padding-block:5px}.plan h2{font-size:34px}.plan-price{position:static;margin:8px 0 0;font-size:24px}
+ .plan-usd{font-size:10px;margin:3px 0 12px}.plan .plan-number{margin-bottom:8px}
+ .popular-label{top:19px;right:20px}.plan button{font-size:12px;min-height:42px}
+ .plans-dialog{padding:20px;height:min(740px,calc(100dvh - 28px));max-height:calc(100dvh - 28px)}
+ .plans-dialog[open]{gap:14px}.plans-dialog .dialog-heading h2{font-size:36px;margin-top:7px}
+ .plans-dialog .dialog-heading .eyebrow{font-size:8px}
+ .plans-dialog .plan ul{font-size:12px}
+ .workspace-unanswered .workspace-inner{height:calc(100dvh - 74px);padding-bottom:15px}
+ .workspace-unanswered .welcome-heading{padding:8px 0 25px}.workspace-unanswered .welcome-heading h1{font-size:48px}
+ .workspace-unanswered .welcome-heading .eyebrow{font-size:8px}.workspace-unanswered .welcome-heading>p:last-child{font-size:12px}
+ .workspace-unanswered .demo-section{padding-top:20px}.workspace-unanswered .workspace-note{font-size:8px;margin-top:16px}
+ .demo-section>.eyebrow{margin-bottom:12px}.demo-prompts{gap:7px}.demo-prompt{padding:8px 10px}
+ .chat-menu-trigger{opacity:1}
+ .setting-row select{width:164px;max-width:47%;padding-left:12px;padding-right:33px;background-position:right 12px center}
+}
+@media(max-width:480px){
+ .intro-copy h1{font-size:clamp(35px,min(10.4vw,6.4dvh),48px)}.intro-copy .eyebrow{font-size:7.5px;letter-spacing:1.6px}
+ .intro-copy>p:not(.eyebrow){font-size:14px}.intro-symbol{font-size:62px}.intro-steps{font-size:9px;gap:8px}
+ .intro-copy .primary-button{min-height:45px}.intro-footer>#skip-intro{font-size:10px}
+ .workspace-unanswered .welcome-heading h1{font-size:43px}.workspace-unanswered .welcome-heading{padding-bottom:19px}
+ .workspace-unanswered .welcome-asterisk{font-size:35px;margin-bottom:15px}
+ .workspace-unanswered .workspace-inner:has(#advanced-options:not(.hidden)) .welcome-heading{display:none}
+ #model-dialog{padding:20px}.dialog-heading h2{font-size:29px}.model-option{padding:12px 9px;gap:12px}
+ #model-dialog .dialog-heading .eyebrow{font-size:8px;letter-spacing:1.4px}
+}
+@media(max-height:700px){
+ #onboarding{grid-template-rows:58px minmax(0,1fr)43px}.intro-header{padding-block:10px}.intro-header .brand-mark{width:30px;height:32px}.intro-header .brand{font-size:20px}
+ .intro-copy{gap:12px}.intro-copy h1{font-size:clamp(32px,7dvh,50px)}.intro-symbol{font-size:45px}.intro-copy>p:not(.eyebrow){font-size:13px;line-height:1.5}
+ .intro-steps{font-size:10px}.intro-copy .primary-button{padding:9px 20px;min-height:39px}
+ .plan-heading h1{font-size:35px}.plan-heading .eyebrow{display:none}.plan-heading p:not(.eyebrow){font-size:11px;margin-top:5px}
+ .plan-intro{gap:8px}.plan .plan-number{font-size:8px;margin-bottom:6px}.plan{padding:12px 18px}
+ .plan h2{font-size:28px}.plan-price{font-size:20px;margin-top:6px}.plan-usd{font-size:9px;margin-bottom:7px}
+ .plan li{padding-block:3px}.plan ul,.plans-dialog .plan ul{font-size:10px;line-height:1.35;margin-bottom:8px}
+ .plan button{font-size:10px;min-height:34px;padding:8px}.popular-label{top:12px;right:13px;font-size:8px}
+ .plan-switcher .plan-tab{font-size:11px;padding:5px}.plan-back{font-size:10px;padding:0}
+ .plans-dialog{padding:18px}.plans-dialog[open]{gap:12px}.plans-dialog .dialog-heading h2{font-size:30px}
+ .workspace-unanswered .welcome-heading{padding:4px 0 13px}.workspace-unanswered .welcome-asterisk,.workspace-unanswered .welcome-heading .eyebrow{display:none}
+ .workspace-unanswered .welcome-heading h1{font-size:37px}.workspace-unanswered .welcome-heading>p:last-child{margin-top:10px;font-size:11px}
+ .workspace-unanswered .workspace-inner:has(#advanced-options:not(.hidden)) .welcome-heading{display:none}
+ .workspace-unanswered .demo-section{padding-top:14px}.workspace-unanswered .workspace-note{margin-top:12px;font-size:8px}
+ .demo-prompt{font-size:10px;padding:6px 9px}.demo-section>.eyebrow{font-size:8px;margin-bottom:9px}
+ .workspace-unanswered textarea{height:55px;min-height:44px}.workspace-unanswered .composer{padding-top:12px;padding-bottom:9px}
+}

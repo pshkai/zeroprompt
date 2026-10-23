@@ -19,6 +19,8 @@ An ongoing undergraduate university project for an **Artificial Intelligence** c
 - Account preview, Settings, Model Library, How it works, and Model Comparison.
 - Comparison tabs for Coding, Data Analysis, Research, Design, Cost per Task, Context Window, and Model time, including technical, legal, research, and document subtasks.
 - Keyboard navigation, responsive mobile drawers, cancellation, copy, text download, and reduced-motion support.
+- Rename and delete individual conversations from their options menu, with optional persistence on the device.
+- Provider logos, custom desktop cursors, and viewport-fitted introductions and plan selection. On phones, plan tabs keep one plan visible at a time without page scrolling.
 
 ## Demo catalog
 
@@ -51,7 +53,7 @@ Examples load a consistent preset: Auto, best quality, all models enabled, all p
 | Start a research plan | Claude Fable 5 |
 | Understand a legal question | Kimi K3 |
 
-Image requests return a prepared text brief, not a generated image. Finance and legal samples are educational fixtures. Research examples contain no live searches or completed findings. Every response is a prepared example, rather than an answer generated from the user's message.
+The image example asks for a meme explaining the Confusion Matrix and displays the exact image supplied for this demo. It makes no image-generation API call. The coding example includes a function, assertions, and a short explanation. Finance and legal samples are educational fixtures. Research examples contain no live searches or completed findings. Every response is a prepared example, rather than an answer generated from the user's message.
 
 ## Subscription concepts
 
@@ -86,3 +88,5 @@ The academic next step is to verify an accessible model pool, define task data a
 Built with HTML, CSS, and vanilla JavaScript. The visual identity uses warm paper, plum, clay, muted olive, and the italic z° mark. GitHub Actions deploys `dist/` to GitHub Pages on changes to `main`.
 
 Created by [pshkai](https://github.com/pshkai) for the K³ undergraduate Artificial Intelligence project.
+
+Provider marks come from [Lobe Icons](https://github.com/lobehub/lobe-icons). Attribution and the upstream license are included in `dist/assets/logos/`. The confusion-matrix image is the user-provided demo asset.
